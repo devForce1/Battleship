@@ -16,7 +16,6 @@ public class Menu extends Application {
     Stage window;
     Button startButton;
     Button exitButton;
-    ImageView imageView;
 
     HBox hBox = new HBox();
     Image image = new Image(getClass().getResourceAsStream("BattleShip.png"));
@@ -31,11 +30,16 @@ public class Menu extends Application {
         window.setTitle("Battle Ship");
         Group root = new Group();
 
-        startButton = new Button("Start");
+        window.setOnCloseRequest(e -> {
+            e.consume();
+            exitProgram();
+        });
+
+        startButton = new Button("Start Game");
         startButton.setOnAction(e -> {});
 
-        exitButton = new Button("Exit");
-        exitButton.setOnAction(e -> {});
+        exitButton = new Button("Exit Game");
+        exitButton.setOnAction(e -> exitProgram());
 
         hBox.setSpacing(50);
         hBox.getChildren().add(startButton);
@@ -60,6 +64,13 @@ public class Menu extends Application {
         Scene scene = new Scene(VBox, 1300, 1200);
         window.setScene(scene);
         window.show();
+    }
+
+    private void exitProgram() {
+        boolean yesNo = ConfirmBox.display("Exit Game", "Are you sure you want to exit game");
+        if(yesNo) {
+            window.close();
+        }
     }
 
 
