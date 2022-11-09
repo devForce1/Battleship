@@ -17,8 +17,15 @@ public class Gridview extends Application {
         launch(args);
     }
 
-
-
+    String colorBlue = "blue.png";
+    String colorYellow = "yellow.png";
+    String colorRed = "red.png";
+    String colorBlack = "black.png";
+    ImageView [][] gridImage = new ImageView[10][10];
+    Image blueImage = new Image(getClass().getResourceAsStream(colorBlue));
+    Image yellowImage = new Image(getClass().getResourceAsStream(colorYellow));
+    Image blackImage = new Image(getClass().getResourceAsStream(colorBlack));
+    Image redImage = new Image(getClass().getResourceAsStream(colorRed));
 
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -27,30 +34,26 @@ public class Gridview extends Application {
         grid.setPadding(new Insets(10,10,10,10));
         grid.setVgap(8);
         grid.setHgap(10);
-        /*Image image = new Image(getClass().getResourceAsStream("BattleShip.png"));*/
-        ImageView [][] gridImage = new ImageView[10][10];
 
 
-        /*grid.add(imageview,0,0);*/
-
-        /*for(int i = 0;i<10;i++) {
-           *//* Image image = new Image(getClass().getResourceAsStream("blue.png"));*//*
-            *//*ImageView imageview = new ImageView(image);*//*
-            gridImage.getClass().getResourceAsStream("blue.png");
-            grid.add(gridImage[0][0],0,0);
-        }*/
 
 
-       /* for(int j = 0;j<10;j++) {
+        for(int j = 0; j<10;j++) {
 
-            for (int i = 0; i<10; i++) {
+            for(int i = 0; i<10;i++) {
 
+                ImageView imageview = new ImageView();
+                imageview.setImage(blueImage);
+                gridImage[j][i] = imageview;
+                grid.add(gridImage[j][i],j,i);
 
-                gridImage[i][j] = new ImageView();
-                grid.add(gridImage[0][0],0,0);
             }
-        }*/
+        }
 
+        gridImage[0][3].setImage(yellowImage);
+        gridImage[1][4].setImage(redImage);
+        gridImage[2][5].setImage(blackImage);
+        gridImage[3][6].setImage(yellowImage);
 
         /*grid.add(gridImage[0][0],0,0);*/
         Scene scene = new Scene(grid, 400, 400);
@@ -59,5 +62,7 @@ public class Gridview extends Application {
         window.show();
 
     }
+
+
 
 }
