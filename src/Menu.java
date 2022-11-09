@@ -41,6 +41,7 @@ public class Menu extends Application {
         exitButton = new Button("Exit Game");
         exitButton.setOnAction(e -> exitProgram());
 
+
         hBox.setSpacing(50);
         hBox.getChildren().add(startButton);
         hBox.getChildren().add(exitButton);
