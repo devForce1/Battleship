@@ -67,6 +67,7 @@ public class Menu extends Application {
         Scene scene = new Scene(VBox, 1300, 1200);
         window.setScene(scene);
         window.show();
+        window.setResizable(false);
     }
 
     private void exitProgram() {

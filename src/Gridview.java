@@ -60,10 +60,10 @@ public class Gridview extends Application {
         gridImage[2][5].setImage(blackImage);
         gridImage[3][6].setImage(yellowImage);
 
-        /*grid.add(gridImage[0][0],0,0);*/
-        Scene scene = new Scene(grid, 400, 400);
+        Scene scene = new Scene(grid, 500, 500);
         window.setScene(scene);
         window.show();
+        window.setResizable(false);
 
     }
 
