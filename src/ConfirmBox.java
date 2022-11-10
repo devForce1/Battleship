@@ -39,6 +39,7 @@ public class ConfirmBox {
         Scene scene = new Scene(vBox);
         window.setScene(scene);
         window.showAndWait();
+        window.setResizable(false);
 
         return yesNo;
     }

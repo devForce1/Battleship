@@ -35,6 +35,7 @@ public class StartGame {
         Scene scene = new Scene(vBox);
         window.setScene(scene);
         window.showAndWait();
+        window.setResizable(false);
 
 
         return startServer;
