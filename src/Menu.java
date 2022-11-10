@@ -36,7 +36,9 @@ public class Menu extends Application {
         });
 
         startButton = new Button("Start Game");
-        startButton.setOnAction(e -> {});
+        startButton.setOnAction(e -> {
+            startProgram();
+        });
 
         exitButton = new Button("Exit Game");
         exitButton.setOnAction(e -> exitProgram());
@@ -68,9 +70,16 @@ public class Menu extends Application {
     }
 
     private void exitProgram() {
-        boolean yesNo = ConfirmBox.display("Exit Game", "Are you sure you want to exit game");
+        boolean yesNo = ConfirmBox.display("Exit Game", "Are you sure you want to exit game?");
         if(yesNo) {
             window.close();
+        }
+    }
+
+    private void startProgram() {
+        boolean startServer = StartGame.display("Start Game","What do you want to start?" );
+        if(startServer) {
+
         }
     }
 

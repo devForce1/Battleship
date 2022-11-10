@@ -17,6 +17,7 @@ public class Gridview extends Application {
         launch(args);
     }
 
+    Stage window;
     String colorBlue = "blue.png";
     String colorYellow = "yellow.png";
     String colorRed = "red.png";
@@ -29,13 +30,17 @@ public class Gridview extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Stage window = primaryStage;
+        window = primaryStage;
+        window.setTitle("Battleship Gameboard");
         GridPane grid = new GridPane();
         grid.setPadding(new Insets(10,10,10,10));
         grid.setVgap(8);
         grid.setHgap(10);
 
-
+        window.setOnCloseRequest(e -> {
+            e.consume();
+            exitProgram();
+        });
 
 
         for(int j = 0; j<10;j++) {
@@ -58,9 +63,15 @@ public class Gridview extends Application {
         /*grid.add(gridImage[0][0],0,0);*/
         Scene scene = new Scene(grid, 400, 400);
         window.setScene(scene);
-
         window.show();
 
+    }
+
+    private void exitProgram() {
+        boolean yesNo = ConfirmBox.display("Exit Game", "Are you sure you want to exit game");
+        if(yesNo) {
+            window.close();
+        }
     }
 
 
