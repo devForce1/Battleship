@@ -18,17 +18,20 @@ public class Coordinate {
     private char ycoordinate;
     private boolean ishit; //
     private boolean hasShip; //
-    private Ships onCoordinate;
+    private Ship onCoordinate;
     private String coordinateImageName;
 
     public Coordinate(char y, char x, boolean ishit, boolean hasShipOncoordinate, String coordinateImageName)/*, Ship ship)*/ {
         this.xcoordinate = x;
-        this.ycoordinate = x;
+        this.ycoordinate = y;
         this.ishit = ishit;
         this.hasShip = hasShipOncoordinate;
         this.coordinateImageName = coordinateImageName;
     }
-
+    public  Coordinate(char y, char x){
+        this.xcoordinate = x;
+        this.ycoordinate = y;
+}
     public void updateCoordinateImage() {
         // Check if hit etc, and update Image + set property on the Image file name
     }
@@ -53,7 +56,7 @@ public class Coordinate {
         this.hasShip = hasShip;
     }
 
-    public void setOnCoordinate(Ships onCoordinate) {
+    public void setOnCoordinate(Ship onCoordinate) {
         this.onCoordinate = onCoordinate;
     }
 
@@ -62,14 +65,14 @@ public class Coordinate {
     }
 
     public char getXcoordinate() {
-        return xcoordinate;
+        return this.xcoordinate;
     }
 
     public char getYcoordinate() {
-        return ycoordinate;
+        return this.ycoordinate;
     }
 
-    public boolean isIshit() {
+    public boolean ishit() {
         return ishit;
     }
 
@@ -77,7 +80,7 @@ public class Coordinate {
         return hasShip;
     }
 
-    public Ships getOnCoordinate() {
+    public Ship getOnCoordinate() {
         return onCoordinate;
     }
 }

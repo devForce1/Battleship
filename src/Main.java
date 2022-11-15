@@ -15,4 +15,5 @@ public class Main extends Application {
         Menu menu = new Menu();
         menu.present(primaryStage);
     }
+
 }
