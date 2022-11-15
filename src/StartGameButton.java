@@ -4,9 +4,9 @@ import javafx.scene.layout.*;
 import javafx.scene.control.*;
 import javafx.geometry.*;
 
-public class StartGame {
-
+public class StartGameButton {
     static boolean startServer;
+    static boolean startClient;
 
     public static boolean display(String titel, String message) {
         Stage window = new Stage();
@@ -15,10 +15,8 @@ public class StartGame {
         window.setMinWidth(250);
         Label label = new Label();
         label.setText(message);
-
         Button serverButton = new Button("Server");
         Button clientButton = new Button("Client");
-
         serverButton.setOnAction(e -> {
 
         });
@@ -36,8 +34,6 @@ public class StartGame {
         window.setScene(scene);
         window.showAndWait();
         window.setResizable(false);
-
-
         return startServer;
     }
 }
