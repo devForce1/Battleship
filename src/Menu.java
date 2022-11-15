@@ -25,6 +25,7 @@ public class Menu  {
         startButton = new Button("Start Game");
         startButton.setOnAction(e -> {
             Gameview gameview = new Gameview(stage);
+            gameview.PresentGameView(stage);
 
 //           startProgram();
 
@@ -46,13 +47,13 @@ public class Menu  {
         exitButton.setMinHeight(20);
         exitButton.setMaxHeight(50);
 
-        VBox VBox = new VBox();
-        VBox.getChildren().add(hBox);
-        VBox.setAlignment(Pos.CENTER);
+        VBox vBox = new VBox();
+        vBox.getChildren().add(hBox);
+        vBox.setAlignment(Pos.CENTER);
         BackgroundSize size = new BackgroundSize(BackgroundSize.AUTO, BackgroundSize.AUTO, false, false, true, true);
         Background background = new Background(new BackgroundImage(image, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, size));
-        VBox.setBackground(background);
-        Scene scene = new Scene(VBox, 1300, 1200);
+        vBox.setBackground(background);
+        Scene scene = new Scene(vBox, 1300, 1200);
         stage.setScene(scene);
         stage.show();
         stage.setResizable(false);

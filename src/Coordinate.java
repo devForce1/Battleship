@@ -18,7 +18,7 @@ public class Coordinate {
     private char ycoordinate;
     private boolean ishit; //
     private boolean hasShip; //
-    private Ships onCoordinate;
+//    private Ships onCoordinate;
     private String coordinateImageName;
 
     public Coordinate(char y, char x, boolean ishit, boolean hasShipOncoordinate, String coordinateImageName)/*, Ship ship)*/ {
@@ -53,7 +53,7 @@ public class Coordinate {
         this.hasShip = hasShip;
     }
 
-    public void setOnCoordinate(Ships onCoordinate) {
+    public void setOnCoordinate(Ship onCoordinate) {
         this.onCoordinate = onCoordinate;
     }
 
@@ -77,7 +77,7 @@ public class Coordinate {
         return hasShip;
     }
 
-    public Ships getOnCoordinate() {
+    public Ship getOnCoordinate() {
         return onCoordinate;
     }
 }
