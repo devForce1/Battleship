@@ -4,44 +4,36 @@ import javafx.scene.layout.*;
 import javafx.scene.control.*;
 import javafx.geometry.*;
 
-
-public class ConfirmBox {
-
-    static boolean yesNo;
+public class StartGameButton {
+    static boolean startServer;
+    static boolean startClient;
 
     public static boolean display(String titel, String message) {
         Stage window = new Stage();
-
         window.initModality(Modality.APPLICATION_MODAL); //Blocks from pressing outside the window
         window.setTitle(titel);
         window.setMinWidth(250);
         Label label = new Label();
         label.setText(message);
+        Button serverButton = new Button("Server");
+        Button clientButton = new Button("Client");
+        serverButton.setOnAction(e -> {
 
-        Button yesButton = new Button("Yes");
-        Button noButton = new Button("No");
-
-        yesButton.setOnAction(e -> {
-            yesNo = true;
-            window.close();
         });
 
-        noButton.setOnAction(e -> {
-            yesNo = false;
-            window.close();
+        clientButton.setOnAction(e -> {
+
         });
 
         VBox vBox = new VBox(10);
         vBox.getChildren().add(label);
-        vBox.getChildren().add(yesButton);
-        vBox.getChildren().add(noButton);
+        vBox.getChildren().add(serverButton);
+        vBox.getChildren().add(clientButton);
         vBox.setAlignment(Pos.CENTER);
         Scene scene = new Scene(vBox);
         window.setScene(scene);
         window.showAndWait();
         window.setResizable(false);
-
-        return yesNo;
+        return startServer;
     }
-
 }
