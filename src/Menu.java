@@ -25,8 +25,6 @@ public class Menu  {
             Gameview gameview = new Gameview(stage);
             gameview.PresentGameView(stage);
 
-//           startProgram();
-
         });
 
         exitButton = new Button("Exit Game");
@@ -61,13 +59,6 @@ public class Menu  {
         boolean yesNo = ConfirmBox.display("Exit Game", "Are you sure you want to exit game?");
         if(yesNo) {
             System.exit(0);
-        }
-    }
-
-    private void startProgram() {
-        boolean startServer = StartGameButton.display("Start Game","What do you want to start?" );
-        if(startServer) {
-
         }
     }
 }

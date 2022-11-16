@@ -38,9 +38,9 @@ public class Coordinate {
         this.hasShip = hasShip;
     }
 
-    public void setOnCoordinate(Ship onCoordinate) {
-        this.onCoordinate = onCoordinate;
-    }
+//    public void setOnCoordinate(Ship onCoordinate) {
+//        this.onCoordinate = onCoordinate;
+//    }
 
     public void setCoordinateImageName(String coordinateImageName) {
         this.coordinateImageName = coordinateImageName;
@@ -58,13 +58,13 @@ public class Coordinate {
         return ishit;
     }
 
-    public boolean isHasShip() {
-        return hasShip;
-    }
+//    public boolean isHasShip() {
+//        return hasShip;
+//    }
 
-    public Ship getOnCoordinate() {
-        return onCoordinate;
-    }
+//    public Ship getOnCoordinate() {
+//        return onCoordinate;
+//    }
 }
 
 

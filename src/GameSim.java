@@ -38,16 +38,16 @@ public class GameSim {
             exit = true;
         }
     }
-    public void checkIfHit(char x, char y) { // Gamecontroller
-
-        if (gameboard.coordinates[x][y].isHasShip()) {
-
-        } else gameview.gridImage[x][y].setImage(gameview.blueImage);
-    }
-    public void Shoot(char x, char y) { // Gamecontroller + kan ha updateImageview
-        gameview.coordinates[x][y].setIshit(true);
-        checkIfHit(x, y);
-    }
+//    public void checkIfHit(char x, char y) { // Gamecontroller
+//
+//        if (gameboard.coordinates[x][y].isHasShip()) {
+//
+//        } else gameview.gridImage[x][y].setImage(gameview.blueImage);
+//    }
+//    public void Shoot(char x, char y) { // Gamecontroller + kan ha updateImageview
+//        gameview.coordinates[x][y].setIshit(true);
+//        checkIfHit(x, y);
+//    }
 
 
 
