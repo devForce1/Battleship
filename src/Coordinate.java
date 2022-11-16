@@ -53,9 +53,9 @@ public class Coordinate {
         this.hasShip = hasShip;
     }
 
-    public void setOnCoordinate(Ship onCoordinate) {
+   /* public void setOnCoordinate(Ship onCoordinate) {
         this.onCoordinate = onCoordinate;
-    }
+    }*/
 
     public void setCoordinateImageName(String coordinateImageName) {
         this.coordinateImageName = coordinateImageName;
@@ -77,9 +77,9 @@ public class Coordinate {
         return hasShip;
     }
 
-    public Ship getOnCoordinate() {
+  /*  public Ship getOnCoordinate() {
         return onCoordinate;
-    }
+    }*/
 }
 
 
