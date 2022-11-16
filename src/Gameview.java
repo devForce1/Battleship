@@ -2,14 +2,16 @@ import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+
 import javafx.stage.Stage;
-import javafx.scene.layout.GridPane;
 import javafx.scene.control.Button;
 public class Gameview {
 
     private Stage stage;
     private Gameboard enemyBoard;
     private Gameboard playerBoard;
+
+    Image image = new Image(getClass().getResourceAsStream("BattleShip.png"));
 
 
     public Gameview(Stage stage) {
