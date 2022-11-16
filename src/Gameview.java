@@ -1,19 +1,14 @@
-import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
 import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
-import javafx.scene.control.Button;
 public class Gameview {
 
     private Stage stage;
     private Gameboard enemyBoard;
     private Gameboard playerBoard;
-
-    Image image = new Image(getClass().getResourceAsStream("BattleShip.png"));
+    Image image = new Image(getClass().getResourceAsStream("BattleShipGameView.png"));
 
 
     public Gameview(Stage stage) {
@@ -29,9 +24,6 @@ public class Gameview {
         hBox.getChildren().add(playerBoard.createGameBoard());
 
         VBox vBox = new VBox();
-        Label label = new Label("BattleShip");
-        vBox.getChildren().add(label);
-        label.setAlignment(Pos.TOP_CENTER);
         vBox.getChildren().add(hBox);
         vBox.setAlignment(Pos.CENTER);
         BackgroundSize size = new BackgroundSize(BackgroundSize.AUTO, BackgroundSize.AUTO, false, false, true, true);

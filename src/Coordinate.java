@@ -1,18 +1,3 @@
-import javafx.application.Application;
-import javafx.geometry.Insets;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-import javafx.scene.paint.Color;
-import javafx.stage.Stage;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
-import javafx.scene.layout.GridPane;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
 public class Coordinate {
     private char xcoordinate;
     private char ycoordinate;
@@ -53,9 +38,9 @@ public class Coordinate {
         this.hasShip = hasShip;
     }
 
-   /* public void setOnCoordinate(Ship onCoordinate) {
+    public void setOnCoordinate(Ship onCoordinate) {
         this.onCoordinate = onCoordinate;
-    }*/
+    }
 
     public void setCoordinateImageName(String coordinateImageName) {
         this.coordinateImageName = coordinateImageName;
@@ -77,9 +62,9 @@ public class Coordinate {
         return hasShip;
     }
 
-  /*  public Ship getOnCoordinate() {
+    public Ship getOnCoordinate() {
         return onCoordinate;
-    }*/
+    }
 }
 
 
