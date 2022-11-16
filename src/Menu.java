@@ -1,6 +1,5 @@
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
@@ -25,8 +24,6 @@ public class Menu  {
         startButton.setOnAction(e -> {
             Gameview gameview = new Gameview(stage);
             gameview.PresentGameView(stage);
-
-//           startProgram();
 
         });
 
@@ -62,13 +59,6 @@ public class Menu  {
         boolean yesNo = ConfirmBox.display("Exit Game", "Are you sure you want to exit game?");
         if(yesNo) {
             System.exit(0);
-        }
-    }
-
-    private void startProgram() {
-        boolean startServer = StartGameButton.display("Start Game","What do you want to start?" );
-        if(startServer) {
-
         }
     }
 }
