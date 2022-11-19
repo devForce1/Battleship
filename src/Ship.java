@@ -1,67 +1,63 @@
 import com.sun.xml.internal.bind.v2.runtime.Coordinator;
 
+
+import java.util.ArrayList;
+
 public class Ship {
     //Kordinater av olika båtar
     //forslag
-    private static Coordinate firstCoordinate = null;
-    private static Coordinate secondCoordinate = null;
-    private static Coordinate thirdCoordinate = null;
-    private static Coordinate fourthCoordinate =  null;
-    private static Coordinate fifthCoordinate = null;
+    private static Coordinate[][] firstCoordinate;
+    private static Coordinate[][] secondCoordinate;
+    private static Coordinate[][] thirdCoordinate;
+    private static Coordinate[][] fourthCoordinate;
+    private static Coordinate[][] fifthCoordinate;
     //en arraylist för att hålla koll på alla  koordinater
-    ArrayList<Coordinate> coordinates = new ArrayList <Coordinate> ();
+    ArrayList<Coordinate[][]> coordinatesArray = new ArrayList <Coordinate[][]>();
     private  String shipName = "";
 
-    public  Ship (firstCoordinate, String shipName){
+    public  Ship (Coordinate[][] firstCoordinate, String shipName){
         this.firstCoordinate = firstCoordinate;
-        Coordinate.add(firstCoordinate);
+        coordinatesArray.add(firstCoordinate);
         shipName = "Patrol boat";
     }
-    public Ship (firstCoordinate, secondCoordinate, String shipName){
+    public Ship (Coordinate[][] firstCoordinate,Coordinate[][] secondCoordinate, String shipName){
         this.firstCoordinate = firstCoordinate;
         this.secondCoordinate = secondCoordinate;
-        Coordinate.add(firstCoordinate);
-        Coordinate.add(secondCoordinate);
+        coordinatesArray.add(firstCoordinate);
+        coordinatesArray.add(secondCoordinate);
         shipName = "Submarine";
     }
-    public Ship (firstCoordinate, secondCoordinate, String shipName){
-        this.firstCoordinate = firstCoordinate;
-        this.secondCoordinate = secondCoordinate;
-        Coordinate.add(firstCoordinate);
-        Coordinate.add(secondCoordinate);
-        shipName = "Submarine";
-    }
-    public Ship (firstCoordinate, secondCoordinate, thirdCoordinate, String shipName){
+    public Ship (Coordinate[][] firstCoordinate,Coordinate[][] secondCoordinate,Coordinate[][] thirdCoordinate, String shipName){
         this.firstCoordinate = firstCoordinate;
         this.secondCoordinate = secondCoordinate;
         this.thirdCoordinate = thirdCoordinate;
-        Coordinate.add(firstCoordinate);
-        Coordinate.add(secondCoordinate);
-        Coordinate.add(thirdCoordinate);
+        coordinatesArray.add(firstCoordinate);
+        coordinatesArray.add(secondCoordinate);
+        coordinatesArray.add(thirdCoordinate);
         shipName = "Cruiser";
     }
-    public Ship (firstCoordinate, secondCoordinate, thirdCoordinate, fourthCoordinate, String shipName){
+    public Ship (Coordinate[][] firstCoordinate, Coordinate[][] secondCoordinate, Coordinate[][] thirdCoordinate, Coordinate[][] fourthCoordinate, String shipName){
         this.firstCoordinate = firstCoordinate;
         this.secondCoordinate = secondCoordinate;
         this.thirdCoordinate = thirdCoordinate;
         this.fourthCoordinate = fourthCoordinate;
-        Coordinate.add(firstCoordinate);
-        Coordinate.add(secondCoordinate);
-        Coordinate.add(thirdCoordinate);
-        Coordinate.add(fourthCoordinate);
+        coordinatesArray.add(firstCoordinate);
+        coordinatesArray.add(secondCoordinate);
+        coordinatesArray.add(thirdCoordinate);
+        coordinatesArray.add(fourthCoordinate);
         shipName = "Battleship";
     }
-    public Ship (firstCoordinate, secondCoordinate, thirdCoordinate, fourthCoordinate, fifthCoordinate, String shipName){
+    public Ship (Coordinate[][] firstCoordinate,Coordinate[][] secondCoordinate,Coordinate[][] thirdCoordinate,Coordinate[][] fourthCoordinate,Coordinate[][] fifthCoordinate, String shipName){
         this.firstCoordinate = firstCoordinate;
         this.secondCoordinate = secondCoordinate;
         this.thirdCoordinate = thirdCoordinate;
         this.fourthCoordinate = fourthCoordinate;
         this.fifthCoordinate = fifthCoordinate;
-        Coordinate.add(firstCoordinate);
-        Coordinate.add(secondCoordinate);
-        Coordinate.add(thirdCoordinate);
-        Coordinate.add(fourthCoordinate);
-        Coordinate.add(fifthCoordinate);
+        coordinatesArray.add(firstCoordinate);
+        coordinatesArray.add(secondCoordinate);
+        coordinatesArray.add(thirdCoordinate);
+        coordinatesArray.add(fourthCoordinate);
+        coordinatesArray.add(fifthCoordinate);
         shipName = "Carrier";
     }
 
