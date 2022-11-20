@@ -6,10 +6,10 @@ public class FieldOccupied extends Throwable {
     }
 
     public int getX(){
-        return problemField.getXcoordinate();
+        return problemField.getX();
     }
     public int getY(){
-        return problemField.getYcoordinate();
+        return problemField.getY();
     }
 
 }
