@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Server{
     public static void main(String[] args){
-        GameSim gameSim = new GameSim("Server");
+        GameController gameController = new GameController("Server");
 
         try (ServerSocket serverSocket = new ServerSocket(9999)){
             Socket socket = serverSocket.accept();
@@ -21,11 +21,11 @@ public class Server{
             boolean allShipsNotSunk = true;
             Scanner scanner = new Scanner(System.in);
 
-            while (!gameSim.isGameOver()) {
-                gameSim.setCommand(reader.readLine());
+            while (!gameController.isGameOver()) {
+                gameController.setCommand(reader.readLine());
 
-                if (!gameSim.isGameOver()) {
-                    writer.println(gameSim.getCommand());
+                if (!gameController.isGameOver()) {
+                    writer.println(gameController.getCommand());
                 }
             }
             socket.close();

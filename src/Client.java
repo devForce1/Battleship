@@ -4,7 +4,7 @@ import java.net.Socket;
 public class Client {
 
     public static void main(String[] args) {
-        GameSim gameSim = new GameSim("Client");
+        GameController gameController = new GameController("Client");
 
         try {
             Socket socket = new Socket("localhost", 9999);
@@ -17,13 +17,13 @@ public class Client {
 
             System.out.println("Client ready.");
 
-            writer.println(gameSim.getCommand());
+            writer.println(gameController.getCommand());
 
-            while (!gameSim.isGameOver()) {
-                gameSim.setCommand(reader.readLine());
+            while (!gameController.isGameOver()) {
+                gameController.setCommand(reader.readLine());
 
-                if(!gameSim.isGameOver()) {
-                    writer.println(gameSim.getCommand());
+                if(!gameController.isGameOver()) {
+                    writer.println(gameController.getCommand());
                 }
             }
             socket.close();

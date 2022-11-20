@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class GameSim {
+public class GameController {
     public String init = "i shot ";
     public String hit = "h shot ";
     public String miss = "m shot ";
@@ -10,7 +10,7 @@ public class GameSim {
     boolean exit = false;
     String mode;
 
-    public GameSim(String mode){
+    public GameController(String mode){
         this.mode = mode;
     }
 
