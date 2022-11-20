@@ -1,9 +1,10 @@
+import org.ietf.jgss.GSSManager;
 public class Coordinate {
     private char xcoordinate;
     private char ycoordinate;
     private boolean ishit; //
     private boolean hasShip; //
-    private Ships onCoordinate;
+    private Ship onCoordinate;
     private String coordinateImageName;
 
     public Coordinate(char y, char x, boolean ishit, boolean hasShipOncoordinate, String coordinateImageName)/*, Ship ship)*/ {
