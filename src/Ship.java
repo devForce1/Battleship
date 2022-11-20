@@ -6,37 +6,34 @@ import java.util.ArrayList;
 public class Ship {
     //Kordinater av olika båtar
     //forslag
-    private static Coordinate[][] firstCoordinate;
-    private static Coordinate[][] secondCoordinate;
-    private static Coordinate[][] thirdCoordinate;
-    private static Coordinate[][] fourthCoordinate;
-    private static Coordinate[][] fifthCoordinate;
-    //en arraylist för att hålla koll på alla  koordinater
-    ArrayList<Coordinate[][]> coordinatesArray = new ArrayList <Coordinate[][]>();
+    private static Coordinate firstCoordinate = null;
+    private static Coordinate secondCoordinate = null;
+    private static Coordinate thirdCoordinate = null;
+    private static Coordinate fourthCoordinate = null;
+    private static Coordinate fifthCoordinate = null;
     private  String shipName = "";
+    //en arraylist för att hålla koll på alla  koordinater
+    ArrayList<Coordinate> coordinatesArray = new ArrayList <Coordinate>();
 
-    public  Ship (Coordinate[][] firstCoordinate, String shipName){
-        this.firstCoordinate = firstCoordinate;
-        coordinatesArray.add(firstCoordinate);
-        shipName = "Patrol boat";
-    }
-    public Ship (Coordinate[][] firstCoordinate,Coordinate[][] secondCoordinate, String shipName){
+    private  static  Coordinate unavalible = null;
+
+
+    public Ship (Coordinate firstCoordinate,Coordinate secondCoordinate, String shipName){
         this.firstCoordinate = firstCoordinate;
         this.secondCoordinate = secondCoordinate;
         coordinatesArray.add(firstCoordinate);
         coordinatesArray.add(secondCoordinate);
-        shipName = "Submarine";
+
     }
-    public Ship (Coordinate[][] firstCoordinate,Coordinate[][] secondCoordinate,Coordinate[][] thirdCoordinate, String shipName){
+    public Ship (Coordinate firstCoordinate,Coordinate secondCoordinate,Coordinate thirdCoordinate, String shipName){
         this.firstCoordinate = firstCoordinate;
         this.secondCoordinate = secondCoordinate;
         this.thirdCoordinate = thirdCoordinate;
         coordinatesArray.add(firstCoordinate);
         coordinatesArray.add(secondCoordinate);
         coordinatesArray.add(thirdCoordinate);
-        shipName = "Cruiser";
     }
-    public Ship (Coordinate[][] firstCoordinate, Coordinate[][] secondCoordinate, Coordinate[][] thirdCoordinate, Coordinate[][] fourthCoordinate, String shipName){
+    public Ship (Coordinate firstCoordinate, Coordinate secondCoordinate, Coordinate thirdCoordinate, Coordinate fourthCoordinate, String shipName){
         this.firstCoordinate = firstCoordinate;
         this.secondCoordinate = secondCoordinate;
         this.thirdCoordinate = thirdCoordinate;
@@ -45,9 +42,8 @@ public class Ship {
         coordinatesArray.add(secondCoordinate);
         coordinatesArray.add(thirdCoordinate);
         coordinatesArray.add(fourthCoordinate);
-        shipName = "Battleship";
     }
-    public Ship (Coordinate[][] firstCoordinate,Coordinate[][] secondCoordinate,Coordinate[][] thirdCoordinate,Coordinate[][] fourthCoordinate,Coordinate[][] fifthCoordinate, String shipName){
+    public Ship (Coordinate firstCoordinate, Coordinate secondCoordinate, Coordinate thirdCoordinate, Coordinate fourthCoordinate, Coordinate fifthCoordinate, String shipName){
         this.firstCoordinate = firstCoordinate;
         this.secondCoordinate = secondCoordinate;
         this.thirdCoordinate = thirdCoordinate;
@@ -58,7 +54,28 @@ public class Ship {
         coordinatesArray.add(thirdCoordinate);
         coordinatesArray.add(fourthCoordinate);
         coordinatesArray.add(fifthCoordinate);
-        shipName = "Carrier";
+    }
+    //registers that a ship has been sucsesfully hit
+    public  void shipHit(Coordinate coordinate){
+        for(int i = 0; i < coordinatesArray.size(); i++)
+        if(coordinatesArray.get(i).equals(coordinate)){
+            System.out.println("Removed a coordinate from ships own array");
+            //removes coordinate from the specific coordinate
+            coordinatesArray.remove(i);
+        }
+    }
+    public boolean noMoreCoordinates(){
+        return coordinatesArray.isEmpty();
+    }
+
+    public boolean hasCoordinates(Coordinate coordinate){
+        for(Coordinate coordinate1: coordinatesArray){
+            if(coordinate1.isEqual(coordinate)){
+                System.out.println("Ship.hasCoordinates(): true");
+                return true;
+            }
+        }
+        return false;
     }
 
 }
