@@ -11,7 +11,9 @@ public class GameController {
         Scanner scanner = new Scanner(System.in);
         boolean exit = false;
         String mode;
+
         Gameview gameview = new Gameview(new Stage());
+
         public GameController() {
 
         }
@@ -25,6 +27,7 @@ public class GameController {
             //Tillfällig System.out
             //Test Command motsvarar Clientens första skott
             System.out.println(mode + " Test Command.");
+
             //Tillfällig scanner, ska ersättas med spelets input/output
             String testCommand = scanner.nextLine();
             if(testCommand.equals("Exit")){
@@ -40,6 +43,7 @@ public class GameController {
             }
         }
         public void checkIfHit(char x, char y) { // Gamecontroller
+
             if (gameboard.coordinates[x][y].isHasShip()) {
 
             } else gameview.gridImage[x][y].setImage(gameview.blueImage);
@@ -48,4 +52,8 @@ public class GameController {
             gameview.coordinates[x][y].setIshit(true);
             checkIfHit(x, y);
         }
+
+
+
+
 }
