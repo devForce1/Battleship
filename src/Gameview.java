@@ -57,6 +57,21 @@ public class Gameview {
         stage.setResizable(false);
     }
 
+    public Gameboard getEnemyBoard() {
+        return enemyBoard;
+    }
+
+    public void setEnemyBoard(Gameboard enemyBoard) {
+        this.enemyBoard = enemyBoard;
+    }
+
+    public Gameboard getPlayerBoard() {
+        return playerBoard;
+    }
+
+    public void setPlayerBoard(Gameboard playerBoard) {
+        this.playerBoard = playerBoard;
+    }
 }
 
 

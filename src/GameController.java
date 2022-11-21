@@ -1,3 +1,5 @@
+import javafx.stage.Stage;
+
 import java.util.Scanner;
 
 public class GameController {
@@ -10,8 +12,10 @@ public class GameController {
     boolean exit = false;
     String mode;
 
-    public GameController(String mode){
-        this.mode = mode;
+    Gameview gameview = new Gameview(new Stage());
+
+    public GameController() {
+
     }
 
     public boolean isGameOver(){
@@ -48,6 +52,8 @@ public class GameController {
         gameview.coordinates[x][y].setIshit(true);
         checkIfHit(x, y);
     }
+
+
 
 
 }

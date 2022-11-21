@@ -146,7 +146,85 @@ public class Gameboard {
         return fieldSatus[x][y];
     }
 
+    public String getColorBlue() {
+        return colorBlue;
+    }
 
+    public void setColorBlue(String colorBlue) {
+        this.colorBlue = colorBlue;
+    }
+
+    public String getColorYellow() {
+        return colorYellow;
+    }
+
+    public void setColorYellow(String colorYellow) {
+        this.colorYellow = colorYellow;
+    }
+
+    public String getColorRed() {
+        return colorRed;
+    }
+
+    public void setColorRed(String colorRed) {
+        this.colorRed = colorRed;
+    }
+
+    public String getColorBlack() {
+        return colorBlack;
+    }
+
+    public void setColorBlack(String colorBlack) {
+        this.colorBlack = colorBlack;
+    }
+
+    public static char[] getXpos() {
+        return xpos;
+    }
+
+    public static void setXpos(char[] xpos) {
+        Gameboard.xpos = xpos;
+    }
+
+    public static char[] getYpos() {
+        return ypos;
+    }
+
+    public static void setYpos(char[] ypos) {
+        Gameboard.ypos = ypos;
+    }
+
+    public Coordinate[][] getCoordinates() {
+        return coordinates;
+    }
+
+    public void setCoordinates(Coordinate[][] coordinates) {
+        this.coordinates = coordinates;
+    }
+
+    public static int[][] getFieldSatus() {
+        return fieldSatus;
+    }
+
+    public static void setFieldSatus(int[][] fieldSatus) {
+        Gameboard.fieldSatus = fieldSatus;
+    }
+
+    public static ArrayList<Ship> getFleet() {
+        return fleet;
+    }
+
+    public static void setFleet(ArrayList<Ship> fleet) {
+        Gameboard.fleet = fleet;
+    }
+
+    public ImageView[][] getGridImages() {
+        return gridImages;
+    }
+
+    public void setGridImages(ImageView[][] gridImages) {
+        this.gridImages = gridImages;
+    }
 }
 
 
