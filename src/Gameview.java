@@ -15,7 +15,6 @@ public class Gameview {
     Button serverButton;
     Button clientButton;
 
-
     public Gameview(Stage stage) {
         this.stage = stage;
         this.enemyBoard = new Gameboard();

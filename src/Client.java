@@ -4,6 +4,7 @@ import java.net.Socket;
 public class Client {
 
     public static void main(String[] args) {
+        System.out.println("Client Start Test");
         GameController gameController = new GameController("Client");
 
         try {
