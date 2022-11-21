@@ -19,16 +19,6 @@ public class GameController{
     String lastY;
     String nextCommand;
 
-    public GameController(String mode){
-        this.mode = mode;
-        gameboard = new Gameboard();
-    }
-
-    private void saveLastCordinates(String x, String y){
-        lastX = x;
-        lastY = y;
-    }
-
     public boolean isGameOver(){
         return exit;
     }
