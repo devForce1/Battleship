@@ -14,7 +14,7 @@ public class Menu  {
     HBox hBox = new HBox();
     Image image = new Image(getClass().getResourceAsStream("BattleShip.png"));
 
-    GameController gameController = new GameController();
+    GameController gameController = new GameController(GameController.ModeT.Client);
 
     public void present(Stage stage) {
         stage.setOnCloseRequest(e -> {
@@ -25,7 +25,6 @@ public class Menu  {
         startButton = new Button("Start Game");
         startButton.setOnAction(e -> {
             gameController.gameview.PresentGameView(stage);
-
         });
 
         exitButton = new Button("Exit Game");

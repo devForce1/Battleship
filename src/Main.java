@@ -23,12 +23,12 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception {
           //Titel // size // lock scene
         System.out.println("Main test2");
-        try {
-            Process process1 = new ProcessBuilder("Server").start();
-            Process process2 = new ProcessBuilder("Client").start();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+//        try {
+//            Process process1 = new ProcessBuilder("Server").start();
+//            Process process2 = new ProcessBuilder("Client").start();
+//                } catch (IOException e) {
+//            throw new RuntimeException(e);
+//        }
         Menu menu = new Menu();
         menu.present(primaryStage);
     }
