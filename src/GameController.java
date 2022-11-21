@@ -1,4 +1,5 @@
 import javafx.stage.Stage;
+
 import java.util.Scanner;
 
     public class GameController {
