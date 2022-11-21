@@ -2,7 +2,7 @@ import javafx.stage.Stage;
 
 import java.util.Scanner;
 
-    public class GameController {
+public class GameController {
         public String init = "i shot ";
         public String hit = "h shot ";
         public String miss = "m shot ";
@@ -48,4 +48,4 @@ import java.util.Scanner;
             gameview.coordinates[x][y].setIshit(true);
             checkIfHit(x, y);
         }
-    }
+}
