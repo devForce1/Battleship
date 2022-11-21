@@ -15,10 +15,6 @@ public class GameController{
     String mode;
     private Gameboard gameboard;
 
-    String lastX;
-    String lastY;
-    String nextCommand;
-
     public boolean isGameOver(){
         return exit;
     }
