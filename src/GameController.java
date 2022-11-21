@@ -13,7 +13,6 @@ public class GameController{
     boolean exit = false;
     boolean start = false;
     String mode;
-    private Gameboard gameboard;
 
     public boolean isGameOver(){
         return exit;
