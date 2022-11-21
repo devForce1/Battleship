@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Server {
     public static void main(String[] args){
-        GameController gameController = new GameController("Server");
+        GameController gameController = new GameController();
 
         try (ServerSocket serverSocket = new ServerSocket(9999)){
             Socket socket = serverSocket.accept();

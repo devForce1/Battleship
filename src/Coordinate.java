@@ -95,14 +95,18 @@ public class Coordinate {
     public boolean ishit() {
         return ishit;
     }
-/*
+
     public boolean isHasShip() {
         return hasShip;
-    }*/
+    }
 
     public Ship getOnCoordinate() {
         return onCoordinate;
     }
+
+
+
+
 }
 
 
