@@ -1,3 +1,8 @@
+import javafx.stage.Stage;
+
+import java.io.*;
+import java.net.ServerSocket;
+import java.net.Socket;
 import java.util.Scanner;
 
 public class GameController{
@@ -15,13 +20,77 @@ public class GameController{
     Scanner scanner = new Scanner(System.in);
     boolean exit = false;
     boolean start = false;
-    ModeT mode;
+    ModeT mode = null;
     String lastX;
     String lastY;
     String nextCommand;
-    public GameController(ModeT mode){
+    public GameController(){
+         gameboard = new Gameboard();
+    }
+
+    public void setMode(ModeT mode) {
         this.mode = mode;
-        gameboard = new Gameboard();
+        if (mode == ModeT.Client) {
+            try {
+                Socket socket = new Socket("localhost", 9999);
+                OutputStream output = socket.getOutputStream();
+                PrintWriter writer = new PrintWriter(output, true);
+                InputStream input = socket.getInputStream();
+                BufferedReader reader = new BufferedReader(new InputStreamReader(input));
+
+                boolean game = true;
+
+                System.out.println("Client ready.");
+
+                writer.println(getCommand());
+
+                while (!isGameOver()) {
+                    setCommand(reader.readLine());
+
+                    if(!isGameOver()) {
+                        writer.println(getCommand());
+                    }
+                }
+                socket.close();
+            }
+            catch (Exception e ) {
+                System.out.println("Game Input/Output error, Restart System.");
+            }
+
+        } else if (mode == ModeT.Server) {
+            try (ServerSocket serverSocket = new ServerSocket(9999)){
+                Socket socket = serverSocket.accept();
+                InputStream inputStream = socket.getInputStream();
+                OutputStream outputStream = socket.getOutputStream();
+                BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
+                PrintWriter writer = new PrintWriter(outputStream, true);
+                System.out.println("Server ready.");
+
+                String gameInput = "";
+                String gameOutput = "";
+
+                boolean allShipsNotSunk = true;
+                Scanner scanner = new Scanner(System.in);
+
+                while (!isGameOver()) {
+                    setCommand(reader.readLine());
+
+                    if (!isGameOver()) {
+                        writer.println(getCommand());
+                    }
+                }
+                socket.close();
+            }
+            catch (IOException e){
+                System.out.println("Game Input/Output error, Restart System.");
+            }
+
+        } else {
+            System.out.println("Error unkown mode");
+        }
+    }
+    public void createGameview(Stage stage) {
+        gameview = new Gameview(this, stage);
     }
     private void saveLastCordinates(String x, String y) {
         lastX = x;
@@ -31,10 +100,10 @@ public class GameController{
         return exit;
     }
     public String getCommand(){
-        if(mode.equals(client)&& !start){
+        if(mode==ModeT.Client && !start){
             start = true;
             saveLastCordinates("a", "1");
-            return init + " a1";
+            return init + "a1";
         }
         String nextX = "a";
         String nextY = "1";
@@ -82,8 +151,9 @@ public class GameController{
         }
     }
     private void checkNewCoorinates(String command) {
-        String x = command.substring(7,1);
-        String y = command.substring(8,1);
+        System.out.println(":"+command+":"+command.length());
+        String x = command.substring(7, 8);
+        String y = command.substring(8);
         // Check the coordinates against own ships
         // Set nextCommand depending on result
 //        checkIfHit(x, y);

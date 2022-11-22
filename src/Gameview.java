@@ -11,11 +11,12 @@ public class Gameview {
     private Gameboard enemyBoard;
     private Gameboard playerBoard;
     Image image = new Image(getClass().getResourceAsStream("BattleShipGameView.png"));
-
     Button serverButton;
     Button clientButton;
 
-    public Gameview(Stage stage) {
+    GameController gameController;
+
+    public Gameview(GameController gameController, Stage stage) {
         this.stage = stage;
         this.enemyBoard = new Gameboard();
         this.playerBoard = new Gameboard();
@@ -23,12 +24,16 @@ public class Gameview {
         clientButton = new Button("Start client");
 
         serverButton.setOnAction(e -> {
-
+            gameController.setMode(GameController.ModeT.Server);
         });
 
         clientButton.setOnAction(e -> {
-
+            gameController.setMode(GameController.ModeT.Client);
         });
+    }
+
+    public void setGameController(GameController gameController) {
+        this.gameController = gameController;
     }
     public void PresentGameView(Stage stage) {
         HBox hBox2 = new HBox(1);

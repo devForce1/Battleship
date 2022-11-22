@@ -1,11 +1,9 @@
 import javafx.application.Application;
 import javafx.stage.Stage;
-import java.lang.Process;
-import java.lang.ProcessBuilder;
 
 import java.io.IOException;
 
-public class Main extends Application {
+public class Main2 extends Application {
 
       public static void main (String[] args) throws IOException {
           launch(args);

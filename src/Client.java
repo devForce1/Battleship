@@ -4,7 +4,7 @@ import java.net.Socket;
 public class Client {
 
     public static void main(String[] args) {
-        GameController gameController = new GameController(GameController.ModeT.Client);
+        GameController gameController = new GameController();
         try {
             Socket socket = new Socket("localhost", 9999);
             OutputStream output = socket.getOutputStream();
