@@ -36,7 +36,6 @@ public class Coordinate {
         }return false;
     }
 
-
     private char xcoordinate;
     private char ycoordinate;
     private boolean ishit; //

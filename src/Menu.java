@@ -24,8 +24,10 @@ public class Menu  {
 
         startButton = new Button("Start Game");
         startButton.setOnAction(e -> {
+            if (gameController.gameview == null) {
+                gameController.createGameview(stage);
+            }
             gameController.gameview.PresentGameView(stage);
-
         });
 
         exitButton = new Button("Exit Game");
