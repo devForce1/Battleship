@@ -11,7 +11,7 @@ public class Ship {
     //screates a new array for each ship
     private List<Coordinate> shipCoordinates = new ArrayList<>();
     //creates those coordinates on the gameboard
-    private  Coordinate[][] gameBoardCoordinates;
+    private static Coordinate[][] gameBoardCoordinates;
     Random random = new Random();
 
 
@@ -37,7 +37,7 @@ public class Ship {
                 //change has ship to true
                 gameBoardCoordinates[i][ypos].setHasShip(true);
                 //switch image for this ship
-//                gameBoardCoordinates[i][ypos].changeImage();
+ //               gameBoardCoordinates[i][ypos].changeImage();
             }
         }
         if(alignment == 2) {
@@ -45,7 +45,7 @@ public class Ship {
                 shipCoordinates.add(gameBoardCoordinates[i][xpos]);
                 gameBoardCoordinates[i][xpos].setOnCoordinate(this);
                 gameBoardCoordinates[i][xpos].setHasShip(true);
-//                gameBoardCoordinates[i][xpos].changeImage();
+ //               gameBoardCoordinates[i][xpos].changeImage();
             }
         }
     }
@@ -65,7 +65,7 @@ public class Ship {
         return true;
     }
 
-    public void createEnemyShips(){
+    public static void createEnemyShips(){
         Ship a = new Ship(5,1,1,1,gameBoardCoordinates);
         Ship b = new Ship(4,7,1,2,gameBoardCoordinates);
         Ship c = new Ship(4,5,9,1,gameBoardCoordinates);
@@ -79,7 +79,7 @@ public class Ship {
 
     }
     //yes they are practically copies of eachouthers. Dont have time for fancy placements
-    public void createPlayerShips(){
+    public static void createPlayerShips(){
         Ship a = new Ship(5,1,1,2,gameBoardCoordinates);
         Ship b = new Ship(4,7,1,1,gameBoardCoordinates);
         Ship c = new Ship(4,5,9,2,gameBoardCoordinates);
