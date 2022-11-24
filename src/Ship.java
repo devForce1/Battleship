@@ -37,7 +37,7 @@ public class Ship {
                 //change has ship to true
                 gameBoardCoordinates[i][ypos].setHasShip(true);
                 //switch image for this ship
-                gameBoardCoordinates[i][ypos].changeImage();
+//                gameBoardCoordinates[i][ypos].changeImage();
             }
         }
         if(alignment == 2) {
@@ -45,7 +45,7 @@ public class Ship {
                 shipCoordinates.add(gameBoardCoordinates[i][xpos]);
                 gameBoardCoordinates[i][xpos].setOnCoordinate(this);
                 gameBoardCoordinates[i][xpos].setHasShip(true);
-                gameBoardCoordinates[i][xpos].changeImage();
+//                gameBoardCoordinates[i][xpos].changeImage();
             }
         }
     }

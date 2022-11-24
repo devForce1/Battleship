@@ -142,8 +142,7 @@ public class GameController{
     }
 
     public void checkIfHit(char x, char y) { // Gamecontroller
-
-
+    }
 
     private void markLastShot(ShotStatusT status) {
         // use lastX and lastY for display/AI
@@ -178,7 +177,3 @@ public class GameController{
         checkIfHit(x, y);
     }
 */
-
-
-}
-
