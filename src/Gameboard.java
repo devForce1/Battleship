@@ -56,6 +56,8 @@ public class Gameboard {
         return gridpane;
     }
 
+    //set  ships on the gameBorad
+
     public String getColorBlue() {
         return colorBlue;
     }
