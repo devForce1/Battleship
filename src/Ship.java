@@ -1,81 +1,55 @@
 import com.sun.xml.internal.bind.v2.runtime.Coordinator;
-
-
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
 public class Ship {
-    //Kordinater av olika båtar
-    //forslag
-    private static Coordinate firstCoordinate = null;
-    private static Coordinate secondCoordinate = null;
-    private static Coordinate thirdCoordinate = null;
-    private static Coordinate fourthCoordinate = null;
-    private static Coordinate fifthCoordinate = null;
-    private  String shipName = "";
-    //en arraylist för att hålla koll på alla  koordinater
-    ArrayList<Coordinate> coordinatesArray = new ArrayList <Coordinate>();
+    int shipSize;
+    int xpos;
+    int ypos;
 
-    private  static  Coordinate unavalible = null;
+    private List<Coordinate> shipCoordinates = new ArrayList<>();
+    private  Coordinate[][] gameBoardCoordinates;
+    Random random = new Random();
+    int alignment = random.nextInt(2);
 
-
-    public Ship (Coordinate firstCoordinate,Coordinate secondCoordinate, String shipName){
-        this.firstCoordinate = firstCoordinate;
-        this.secondCoordinate = secondCoordinate;
-        coordinatesArray.add(firstCoordinate);
-        coordinatesArray.add(secondCoordinate);
-
-    }
-    public Ship (Coordinate firstCoordinate,Coordinate secondCoordinate,Coordinate thirdCoordinate, String shipName){
-        this.firstCoordinate = firstCoordinate;
-        this.secondCoordinate = secondCoordinate;
-        this.thirdCoordinate = thirdCoordinate;
-        coordinatesArray.add(firstCoordinate);
-        coordinatesArray.add(secondCoordinate);
-        coordinatesArray.add(thirdCoordinate);
-    }
-    public Ship (Coordinate firstCoordinate, Coordinate secondCoordinate, Coordinate thirdCoordinate, Coordinate fourthCoordinate, String shipName){
-        this.firstCoordinate = firstCoordinate;
-        this.secondCoordinate = secondCoordinate;
-        this.thirdCoordinate = thirdCoordinate;
-        this.fourthCoordinate = fourthCoordinate;
-        coordinatesArray.add(firstCoordinate);
-        coordinatesArray.add(secondCoordinate);
-        coordinatesArray.add(thirdCoordinate);
-        coordinatesArray.add(fourthCoordinate);
-    }
-    public Ship (Coordinate firstCoordinate, Coordinate secondCoordinate, Coordinate thirdCoordinate, Coordinate fourthCoordinate, Coordinate fifthCoordinate, String shipName){
-        this.firstCoordinate = firstCoordinate;
-        this.secondCoordinate = secondCoordinate;
-        this.thirdCoordinate = thirdCoordinate;
-        this.fourthCoordinate = fourthCoordinate;
-        this.fifthCoordinate = fifthCoordinate;
-        coordinatesArray.add(firstCoordinate);
-        coordinatesArray.add(secondCoordinate);
-        coordinatesArray.add(thirdCoordinate);
-        coordinatesArray.add(fourthCoordinate);
-        coordinatesArray.add(fifthCoordinate);
-    }
-    //registers that a ship has been sucsesfully hit
-    public  void shipHit(Coordinate coordinate){
-        for(int i = 0; i < coordinatesArray.size(); i++)
-        if(coordinatesArray.get(i).equals(coordinate)){
-            System.out.println("Removed a coordinate from ships own array");
-            //removes coordinate from the specific coordinate
-            coordinatesArray.remove(i);
-        }
-    }
-    public boolean noMoreCoordinates(){
-        return coordinatesArray.isEmpty();
+    public Ship(int shipSize, int alignment, int xpos, int ypos, Coordinate[][]gameBoardCoordinates){
+        this.shipSize = shipSize;
+        this.xpos = xpos;
+        this.ypos = ypos;
+        this.alignment = alignment;
+        this.gameBoardCoordinates = gameBoardCoordinates;
+        storeShipCoordinates();
     }
 
-    public boolean hasCoordinates(Coordinate coordinate){
-        for(Coordinate coordinate1: coordinatesArray){
-            if(coordinate1.isEqual(coordinate)){
-                System.out.println("Ship.hasCoordinates(): true");
-                return true;
+    public  void storeShipCoordinates(){
+        if ( alignment == 0){
+            for(int i = xpos; i < (xpos*shipSize); i++){
+                shipCoordinates.add(gameBoardCoordinates[i][ypos]);
+                gameBoardCoordinates[i][ypos].setShipHere(this);
+                gameBoardCoordinates[i][ypos].setHasShip(true);
+                gameBoardCoordinates[i][ypos].changeImage();
             }
         }
-        return false;
+        if (alignment == 1){
+            for(int i = ypos; i < (ypos*shipSize); i++){
+                shipCoordinates.add(gameBoardCoordinates[i][xpos]);
+                gameBoardCoordinates[i][xpos].setShipHere(this);
+                gameBoardCoordinates[i][xpos].setHasShip(true);
+                gameBoardCoordinates[i][xpos].changeImage();
+            }
+        }
     }
+
+    public Boolean isSunken(){
+        boolean sunken = true;
+        for (Coordinate coordinate : shipCoordinates){
+            if(!coordinate.getIsHit()){
+                sunken = false;
+            }
+        }
+        return true;
+    }
+
 
 }

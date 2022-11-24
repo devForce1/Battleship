@@ -1,42 +1,6 @@
 import org.ietf.jgss.GSSManager;
 
 public class Coordinate {
-    private int x;
-    private  int y;
-    private int notAvailbleX;
-    private int notNotAvailbleX2;
-    private int notAvailbleY;
-    private int notAvailibleY2;
-
-    public Coordinate (int x, int y){
-        this.x = Gameboard.xpos[x];
-        this.y = Gameboard.ypos[y];
-    }
-
-    public Coordinate() {
-        this.notAvailbleX = Gameboard.xpos[x];
-        this.notNotAvailbleX2 = Gameboard.xpos[x];
-
-        this.notAvailbleY = Gameboard.ypos[y];
-        this.notAvailibleY2 = Gameboard.ypos[y];
-
-    }
-
-    public int getX(){
-        return this.x = Gameboard.xpos[x];
-    }
-
-    public int getY(){
-        return this.y = Gameboard.ypos[y];
-    }
-
-    public boolean isEqual (Coordinate coordinate){
-        if( this.x == coordinate.getX()& this.y == coordinate.getY()){
-            return true;
-        }return false;
-    }
-
-
     private char xcoordinate;
     private char ycoordinate;
     private boolean ishit; //

@@ -42,6 +42,7 @@ public class GameController {
             exit = true;
         }
     }
+
     public void checkIfHit(char x, char y) { // Gamecontroller
 
         if (gameboard.coordinates[x][y].isHasShip()) {
@@ -52,8 +53,5 @@ public class GameController {
         gameview.coordinates[x][y].setIshit(true);
         checkIfHit(x, y);
     }
-
-
-
 
 }
