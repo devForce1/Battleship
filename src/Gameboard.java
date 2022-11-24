@@ -2,7 +2,6 @@ import javafx.geometry.Pos;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
-
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -51,6 +50,7 @@ public class Gameboard {
                 gridImages[j][i] = new ImageView();
                 gridImages[j][i].setImage(new Image(coordinates[j][i].getCoordinateImageName()));
                 gridpane.add(gridImages[j][i], j,i);
+              
             }
         }
         return gridpane;
