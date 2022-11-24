@@ -141,6 +141,10 @@ public class GameController{
         }
     }
 
+    public void checkIfHit(char x, char y) { // Gamecontroller
+
+
+
     private void markLastShot(ShotStatusT status) {
         // use lastX and lastY for display/AI
         if (status == ShotStatusT.miss) {
@@ -159,6 +163,8 @@ public class GameController{
 //        checkIfHit(x, y);
     }
 
+}
+
 //    private void checkIfHit(String x, String y) {
 //    }
 
@@ -175,3 +181,4 @@ public class GameController{
 
 
 }
+

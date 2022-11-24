@@ -36,7 +36,7 @@ public class Menu  {
         hBox.setSpacing(50);
         hBox.getChildren().add(startButton);
         hBox.getChildren().add(exitButton);
-        hBox.setPadding(new Insets(400, 200, 200, 500));
+        hBox.setPadding(new Insets(400, 200, 200, 325));
         startButton.setMinWidth(150);
         startButton.setMaxWidth(150);
         startButton.setMinHeight(20);
@@ -52,7 +52,7 @@ public class Menu  {
         BackgroundSize size = new BackgroundSize(BackgroundSize.AUTO, BackgroundSize.AUTO, false, false, true, true);
         Background background = new Background(new BackgroundImage(image, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, size));
         vBox.setBackground(background);
-        Scene scene = new Scene(vBox, 1300, 1200);
+        Scene scene = new Scene(vBox, 1000, 900);
         stage.setScene(scene);
         stage.show();
         stage.setResizable(false);
