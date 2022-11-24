@@ -36,21 +36,24 @@ public class Coordinate {
         }return false;
     }
 
+
     private char xcoordinate;
     private char ycoordinate;
-    private boolean ishit; //
+    private boolean isHit; //
     private boolean hasShip; //
     private Ship onCoordinate;
     private String coordinateImageName;
 
-    public Coordinate(char y, char x, boolean ishit, boolean hasShipOncoordinate, String coordinateImageName// Ship ship
+    public Coordinate(char y, char x, boolean isHit, boolean hasShipOncoordinate, String coordinateImageName// Ship ship
                        ){
         this.xcoordinate = x;
         this.ycoordinate = y;
-        this.ishit = ishit;
+        this.isHit = isHit;
         this.hasShip = hasShipOncoordinate;
         this.coordinateImageName = coordinateImageName;
     }
+
+
 
     public void updateCoordinateImage() {
         // Check if hit etc, and update Image + set property on the Image file name
@@ -69,7 +72,7 @@ public class Coordinate {
     }
 
     public void setIshit(boolean ishit) {
-        this.ishit = ishit;
+        this.isHit = ishit;
     }
 //Maybe we should take this aways since the functionality is in Gameboard - fieldstatus
     public void setHasShip(boolean hasShip) {
@@ -92,8 +95,8 @@ public class Coordinate {
         return this.ycoordinate;
     }
 
-    public boolean ishit() {
-        return ishit;
+    public boolean getIsHit() {
+        return isHit;
     }
 
     public boolean isHasShip() {
