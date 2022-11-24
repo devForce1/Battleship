@@ -2,6 +2,8 @@ import javafx.geometry.Pos;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
+
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -49,6 +51,7 @@ public class Gameboard {
         gridpane.setVgap(1);
         gridpane.setHgap(1);
         gridpane.setAlignment(Pos.CENTER);
+        gridpane.setStyle("-fx-background-color: white");
 
         for (int j = 0; j < 10; j++) {
             fieldSatus = new int[9][9];
