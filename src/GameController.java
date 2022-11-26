@@ -24,6 +24,8 @@ public class GameController{
     String lastX;
     String lastY;
     String nextCommand;
+    int nextXCord;
+    int nextYCord;
     public GameController(){
          gameboard = new Gameboard();
     }
@@ -31,6 +33,7 @@ public class GameController{
     public void setMode(ModeT mode) {
         this.mode = mode;
         if (mode == ModeT.Client) {
+            Ship.createPlayerShips();
             try {
                 Socket socket = new Socket("localhost", 9999);
                 OutputStream output = socket.getOutputStream();
@@ -58,6 +61,7 @@ public class GameController{
             }
 
         } else if (mode == ModeT.Server) {
+            Ship.createEnemyShips();
             try (ServerSocket serverSocket = new ServerSocket(9999)){
                 Socket socket = serverSocket.accept();
                 InputStream inputStream = socket.getInputStream();
@@ -106,9 +110,38 @@ public class GameController{
             return init + "a1";
         }
         String nextX = "a";
-        String nextY = "1";
+        String nextY = ""+nextYCord;
+        nextYCord++;
+        if(nextYCord>10){
+            nextXCord++;
+            nextYCord=1;
+        }
+        nextCommand="m";
         // Get next coordinates from AI
-        return nextCommand + " shot "+nextX+nextY;
+        return nextCommand + " shot "+getX(nextXCord)+nextYCord;
+    }
+    private String getX(int pos){
+        if(pos==1){
+            return "a";
+        } else if (pos==2) {
+            return "b";
+        }else if (pos==3) {
+            return "c";
+        }else if (pos==4) {
+            return "d";
+        }else if (pos==5) {
+            return "e";
+        }else if (pos==6) {
+            return "f";
+        }else if (pos==7) {
+            return "g";
+        }else if (pos==8) {
+            return "h";
+        }else if (pos==9) {
+            return "i";
+        }else{
+            return "j";
+        }
     }
     public void setCommand(String command){
         System.out.println("New command received: " + command);
