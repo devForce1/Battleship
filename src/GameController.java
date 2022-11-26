@@ -24,8 +24,8 @@ public class GameController{
     String lastX;
     String lastY;
     String nextCommand;
-    int nextXCord;
-    int nextYCord;
+    int nextXCord = 1;
+    int nextYCord = 1;
     public GameController(){
          gameboard = new Gameboard();
     }
@@ -109,16 +109,24 @@ public class GameController{
             saveLastCordinates("a", "1");
             return init + "a1";
         }
-        String nextX = "a";
+
+        nextCommand="m";
+        return nextCommand + " shot "+nextCordinate();
+    }
+
+    private String nextCordinate() {
         String nextY = ""+nextYCord;
         nextYCord++;
         if(nextYCord>10){
             nextXCord++;
             nextYCord=1;
         }
-        nextCommand="m";
-        // Get next coordinates from AI
-        return nextCommand + " shot "+getX(nextXCord)+nextYCord;
+
+        if (nextYCord > 10 && nextXCord > 10) {
+            exit = true;
+        }
+        return getX(nextXCord)+nextYCord;
+
     }
     private String getX(int pos){
         if(pos==1){
