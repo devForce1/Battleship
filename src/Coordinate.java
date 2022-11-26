@@ -21,6 +21,8 @@ public class Coordinate {
 
 
 
+
+
     public void updateCoordinateImage() {
         // Check if hit etc, and update Image + set property on the Image file name
     }

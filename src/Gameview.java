@@ -10,7 +10,8 @@ public class Gameview {
     private Stage stage;
     private Gameboard enemyBoard;
     private Gameboard playerBoard;
-
+    private Ship enemyShips;
+    private Ship plaeyerShips;
     Image image = new Image(getClass().getResourceAsStream("BattleShipGameView.png"));
     Button serverButton;
     Button clientButton;
