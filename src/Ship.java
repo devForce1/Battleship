@@ -11,7 +11,7 @@ public class Ship {
     //screates a new array for each ship
     private List<Coordinate> shipCoordinates = new ArrayList<>();
     //creates those coordinates on the gameboard
-    private static Coordinate[][] gameBoardCoordinates;
+    static Coordinate[][] gameBoardCoordinates;
     Random random = new Random();
 
 
@@ -51,33 +51,6 @@ public class Ship {
     }
 
 
-
-    public static void createEnemyShips(){
-        Ship a = new Ship(5,1,1,1,gameBoardCoordinates);
-        Ship b = new Ship(4,7,1,2,gameBoardCoordinates);
-        Ship c = new Ship(4,5,9,1,gameBoardCoordinates);
-        Ship d = new Ship(3,1,6,1,gameBoardCoordinates);
-        Ship e = new Ship(3,2,8,2,gameBoardCoordinates);
-        Ship f = new Ship(3,8,7,1,gameBoardCoordinates);
-        Ship g = new Ship(2,2,3,2,gameBoardCoordinates);
-        Ship h = new Ship(2,4,3,1,gameBoardCoordinates);
-        Ship o = new Ship(2,5,6,2,gameBoardCoordinates);
-        Ship p = new Ship(2,8,4,2,gameBoardCoordinates);
-
-    }
-    //yes they are practically copies of eachouthers. Dont have time for fancy placements
-    public static void createPlayerShips(){
-        Ship a = new Ship(5,1,1,2,gameBoardCoordinates);
-        Ship b = new Ship(4,7,1,1,gameBoardCoordinates);
-        Ship c = new Ship(4,5,9,2,gameBoardCoordinates);
-        Ship d = new Ship(3,1,6,2,gameBoardCoordinates);
-        Ship e = new Ship(3,2,8,1,gameBoardCoordinates);
-        Ship f = new Ship(3,8,7,2,gameBoardCoordinates);
-        Ship g = new Ship(2,2,3,1,gameBoardCoordinates);
-        Ship h = new Ship(2,4,3,2,gameBoardCoordinates);
-        Ship o = new Ship(2,5,6,1,gameBoardCoordinates);
-        Ship p = new Ship(2,8,4,1,gameBoardCoordinates);
-    }
 
     //Method to check if the ship is sunken
     public Boolean isSunken(){
