@@ -33,7 +33,7 @@ public class GameController{
     public void setMode(ModeT mode) {
         this.mode = mode;
         if (mode == ModeT.Client) {
-            Ship.createPlayerShips();
+            ShipUtility.createPlayerShips();
             try {
                 Socket socket = new Socket("localhost", 9999);
                 OutputStream output = socket.getOutputStream();
@@ -61,7 +61,7 @@ public class GameController{
             }
 
         } else if (mode == ModeT.Server) {
-            Ship.createEnemyShips();
+            ShipUtility.createEnemyShips();
             try (ServerSocket serverSocket = new ServerSocket(9999)){
                 Socket socket = serverSocket.accept();
                 InputStream inputStream = socket.getInputStream();
