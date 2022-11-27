@@ -1,4 +1,4 @@
-import org.ietf.jgss.GSSManager;
+
 
 public class Coordinate {
     private int x;
