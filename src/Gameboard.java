@@ -39,14 +39,17 @@ public class Gameboard {
             }
         }
     }
+    //David Nordström och Robin Andersson har gjort denna klass
+    // Skapar spelplanen
     public GridPane createGameBoard () {
-        GridPane gridpane = new GridPane();
-        gridpane.setMinSize(400,400);
-        gridpane.setVgap(1);
-        gridpane.setHgap(1);
-        gridpane.setAlignment(Pos.CENTER);
-        gridpane.setStyle("-fx-background-color: white");
+        GridPane gridpane = new GridPane(); //Gör en gridpane
+        gridpane.setMinSize(400,400); // Sätter storleken på spelplanen
+        gridpane.setVgap(1); // Vertikala mellanrummet för gridpanen
+        gridpane.setHgap(1); // Horisontella mellanrummet för gridpane
+        gridpane.setAlignment(Pos.CENTER); // Sätter gridpane postionen
+        gridpane.setStyle("-fx-background-color: white"); // Gör bakgrunden gör gridpanen vit. Gör så det ser ut som ett mönster
 
+        // Gör for lopp för att skapa indexen (koordinaterna) för spelplanen och lägger in bilderna
         for (int j = 0; j < 10; j++) {
             for (int i = 0; i < 10; i++) {
 
@@ -59,7 +62,7 @@ public class Gameboard {
         return gridpane;
     }
 
-    //set  ships on the gameBorad
+    // Setters & Getters som kunde ha kommit till anvädning
 
     public String getColorBlue() {
         return colorBlue;

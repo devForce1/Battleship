@@ -14,8 +14,8 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
           //Titel // size // lock scene
-        Menu menu = new Menu();
-        menu.present(primaryStage);
+        Menu menu = new Menu(); // Gör en menu
+        menu.present(primaryStage); // Sätter menu som ett huvud fönster
     }
 
 }
