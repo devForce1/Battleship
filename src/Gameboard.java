@@ -27,10 +27,11 @@ public class Gameboard {
     private ImageView[][] gridImages = new ImageView[10][10];
 
 
+    // Constructor to call method to create a 10 x 10 2D array of coordinate object, so that its all set up when creating a new gaeboard
     public Gameboard() {
         createCoordinates();
     }
-
+    //Method to create a 2 D array of coordinate objects
     public void createCoordinates() {
         for (int j = 0; j < 10; j++) {
             for (int i = 0; i < 10; i++) {
