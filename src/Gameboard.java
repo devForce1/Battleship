@@ -2,10 +2,7 @@ import javafx.geometry.Pos;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
-
-import java.awt.*;
 import java.util.ArrayList;
-import java.util.Iterator;
 
 
 public class Gameboard {

@@ -204,23 +204,6 @@ public class GameController{
     private void checkNewCoorinates(String command) {
         String x = command.substring(7, 8);
         String y = command.substring(8);
-        // Check the coordinates against own ships
-        // Set nextCommand depending on result
-//        checkIfHit(x, y);
     }
 
 }
-
-//    private void checkIfHit(String x, String y) {
-//    }
-
-/*    public void checkIfHit(String x, String y) { // Gamecontroller
-        //    if (gameboard.coordinates[x][y].isHasShip()) {
-        //    } else gameview.gridImage[x][y].setImage(gameview.blueImage);
-    }
-    public void Shoot(String x, String y) {
-        // Gamecontroller + kan ha updateImageview
-        //gameview.coordinates[x][y].setIshit(true);
-        checkIfHit(x, y);
-    }
-*/
