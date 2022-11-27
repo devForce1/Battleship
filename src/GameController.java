@@ -5,6 +5,13 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.Scanner;
 
+//Author @Adam Westrup
+//Spindeln i nätet. GameController hanterar den största delen utav logiken. Den hämtar och använder sig utav andra klasser och metoder.
+//31-91 Metod för Server och Client.
+//92-94 Metod som kallar på Gameview klassen.
+//106-108 Metod för ifall spelet är över.
+//127-163 Metod för att skjuta A1 - J10 (Dum skott metod)
+//164-191 Metod för att skicka kommandon.
 public class GameController{
 
     public Gameview gameview;
@@ -122,7 +129,7 @@ public class GameController{
             nextYCord=1;
         }
 
-        if (nextYCord > 10 && nextXCord > 10) {
+        if (nextYCord > 9 && nextXCord > 9) {
             exit = true;
         }
         return getX(nextXCord)+nextYCord;
@@ -195,7 +202,6 @@ public class GameController{
         }
     }
     private void checkNewCoorinates(String command) {
-        System.out.println(":"+command+":"+command.length());
         String x = command.substring(7, 8);
         String y = command.substring(8);
         // Check the coordinates against own ships
